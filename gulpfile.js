@@ -7,7 +7,7 @@ const image = require('gulp-imagemin')
 const stripJs = require('gulp-strip-comments')
 const stripCss = require('gulp-strip-css-comments')
 
-function tarefasCSS(cb) {
+function tarefasCSS() {
 
     return gulp.src([
             './node_modules/bootstrap/dist/css/bootstrap.css',
@@ -62,3 +62,4 @@ function tarefasImagem(){
 exports.styles = tarefasCSS
 exports.scripts = tarefasJS
 exports.images = tarefasImagem
+exports.default = gulp.series(tarefasCSS, tarefasJS, tarefasImagem)
